@@ -12,5 +12,10 @@ public class CacheThreadPool implements Executor{
     public void execute(Runnable command) {
 
         ExecutorService executorService = Executors.newCachedThreadPool();
+        executorService.execute(new Runnable() {
+            public void run() {
+                System.out.println(1);
+            }
+        });
     }
 }
